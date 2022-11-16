@@ -13,19 +13,27 @@ public class MoveToStep2 : MonoBehaviour
     public TextMeshProUGUI countFirst;
     public TextMeshProUGUI countSecond;
     public TextMeshProUGUI countThird;
+    
     public Image CurrentImageStep;
     public Sprite NewImageStep;
+
+    public Image NextImageStep;
+    public Sprite NewNextImageStep;
+    
     private string countForFirstButton = "2";
     private string countForSecondButton = "1";
     private string countForThirdButton = "2";
     [Header("NOT SET THIS VALUE!")]
     public static bool goToNextStep = false;
+
+    public static bool isCompleted = false;
     private void Update()
     {
         if (goToNextStep)
         {
             SetAllButton();
             goToNextStep = false;
+            isCompleted = true;
         }
     }
     public void SetAllButton()
@@ -40,5 +48,6 @@ public class MoveToStep2 : MonoBehaviour
         countSecond.enabled = true;
         countThird.gameObject.SetActive(true);
         CurrentImageStep.sprite = NewImageStep;
+        NextImageStep.sprite = NewNextImageStep;
     }
 }

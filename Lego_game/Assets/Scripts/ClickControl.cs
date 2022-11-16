@@ -16,10 +16,12 @@ public class ClickControl : MonoBehaviour
             {
                 var objPos = hit.transform.position;
                 var heightY = 0.0f;
+                // происходит постановка кубика на другой кубик
                 if (hit.transform.localScale.y < 1) heightY = hit.transform.localScale.y + 1.65f;
                 else heightY = hit.transform.localScale.y;
                 var pos = new Vector3(objPos.x, objPos.y + heightY, objPos.z);
                 var newCube = Instantiate(cubePrefab, pos, Quaternion.identity);
+                
                 count.text = (int.Parse(count.text) - 1).ToString();
                 cubeChoosen = false;
             }
