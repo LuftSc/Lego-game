@@ -7,6 +7,7 @@ public class ClickControl : MonoBehaviour
 {
     public static GameObject cubePrefab;
     public static bool cubeChoosen;
+    public static bool cubeMove;
     public static TextMeshProUGUI count;
     void Update()
     {

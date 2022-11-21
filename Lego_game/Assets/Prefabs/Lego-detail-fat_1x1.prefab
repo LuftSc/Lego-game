@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8168908183020233132}
   m_Layer: 0
   m_Name: Lego-detail-fat_1x1
-  m_TagString: Untagged
+  m_TagString: MovementObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
