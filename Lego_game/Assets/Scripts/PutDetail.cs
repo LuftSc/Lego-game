@@ -16,7 +16,6 @@ public class PutDetail : MonoBehaviour
     }
     public void Update()
     {
-        //if (MoveToStep2.goToNextStep) MoveToStep2.goToNextStep = false;
         if (count.text == "0")
         {
             count.text = "";
@@ -32,9 +31,11 @@ public class PutDetail : MonoBehaviour
                     break;
                 }
             }
-
-            if (isNotActiveObject) {MoveToStep2.goToNextStep = true;
-            }
+            
+            if (isNotActiveObject)
+                if (MoveToStep3.isCompleted) Debug.Log("!!!!!!!!!");
+                else if (MoveToStep2.isCompleted) MoveToStep3.goToNextStep = true;
+                else MoveToStep2.goToNextStep = true;
         }
     }
 }
