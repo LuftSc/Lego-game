@@ -7,7 +7,6 @@ public class ClickControl : MonoBehaviour
 {
     public static GameObject cubePrefab;
     public static bool cubeChoosen;
-    public static bool cubeMove;
     public static TextMeshProUGUI count;
     void Update()
     {
@@ -22,8 +21,10 @@ public class ClickControl : MonoBehaviour
                 else heightY = hit.transform.localScale.y;
                 var pos = new Vector3(objPos.x, objPos.y + heightY, objPos.z);
                 var newCube = Instantiate(cubePrefab, pos, Quaternion.identity);
+                CameraRotateAroundM.newTarget = newCube.transform;
                 
-                count.text = (int.Parse(count.text) - 1).ToString();
+                //count.text = (int.Parse(count.text) - 1).ToString();
+                count.text = $"x{int.Parse(count.text.Trim('x')) - 1}";
                 cubeChoosen = false;
             }
         }
